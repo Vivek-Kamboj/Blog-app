@@ -1,0 +1,29 @@
+<%- include("partials/header") %>
+
+<div class="ui main text container segment">
+	<div class="ui huge header">Edit '<%= blog.title %> '</div>
+	<form method="POST" action="/blogs/<%= blog._id %>?_method=PUT" class="ui form">
+		<div class="field">
+			<label>Title</label>
+			<input type="text" name="Blog[title]" placeholder="Title" value="<%= blog.title %>">	
+		</div>
+		<div class="field">
+			<label>Image url</label>
+			<input type="text" name="Blog[image]" placeholder="Image" value="<%= blog.image %>">
+		</div>
+		<div class="field">
+			<label>Start Writing</label>
+			<textarea name="Blog[body]" placeholder="Blog body goes here"><%= blog.body %></textarea>
+		</div>
+		
+		<input type="submit" class="ui blue basic button big">
+		
+		
+		
+	</form>
+	
+</div>
+
+
+
+<%- include("partials/footer") %>
